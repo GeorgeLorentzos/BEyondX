@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="el">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>BeyondX Event - Το Μέλλον Ξεκινά Εδώ</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="icon" href="be.png" type="image/png" />
+       <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 50%, #0a0a0a 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at top, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><circle cx="20" cy="20" r="1" fill="white" opacity="0.3"/><circle cx="80" cy="60" r="1" fill="white" opacity="0.3"/><circle cx="120" cy="40" r="1" fill="white" opacity="0.3"/><circle cx="160" cy="80" r="1" fill="white" opacity="0.3"/><circle cx="40" cy="120" r="1" fill="white" opacity="0.3"/><circle cx="100" cy="140" r="1" fill="white" opacity="0.3"/><circle cx="180" cy="160" r="1" fill="white" opacity="0.3"/></svg>');
+            animation: twinkle 10s ease-in-out infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.8; }
+        }
+        .glow-purple {
+            box-shadow: 0 0 20px rgba(147, 51, 234, 0.5),
+                       0 0 40px rgba(147, 51, 234, 0.3),
+                       0 0 60px rgba(147, 51, 234, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(147, 51, 234, 0.8);
+        }
+        .btn-pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .slider-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+        .loader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(147, 51, 234, 0.3);
+            border-top-color: #9333ea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+    </style>
+   </head>
+   <body class="bg-black">
+      <div class="loader" id="loader">
+         <div class="spinner"></div>
+      </div>
+      <div class="animated-bg"></div>
+      <div class="stars"></div>
+      <div class="relative z-10">
+         <section class="min-h-screen flex flex-col items-center justify-center px-6 py-20">
+            <div class="max-w-5xl mx-auto text-center flex justify-center items-center flex-col">
+               <div class="mb-1">
+                  <img class="w-32 h-32 rounded-full mx-auto glow-purple border border-purple-500/50" src="logo.png" alt="BeyondX Logo" loading="lazy" />
+               </div>
+               <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-2" style="font-family: 'Roboto', sans-serif;">
+                  <span class="robotob shiny-text text-purple-400 text-2xl sm:text-3xl md:text-4xl uppercase mt-4 ">
+                  BEyondX EVENT
+                  </span>
+               </h1>
+               <div class="text-center mb-4">
+                  <p class="text-purple-300 text-lg md:text-xl font-semibold mb-3">
+                     29-30 ΝΟΕΜΒΡΗ | GRAND HYATT, ΑΘΗΝΑ
+                  </p>
+                  <div class="inline-flex gap-4 backdrop-blur-sm border border-purple-500/50 rounded-xl p-4 md:p-6">
+                     <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-purple-400" id="days">00</div>
+                        <div class="text-xs md:text-sm text-gray-400 uppercase">Μέρες</div>
+                     </div>
+                     <div class="text-purple-400 text-3xl md:text-4xl font-bold">:</div>
+                     <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-purple-400" id="hours">00</div>
+                        <div class="text-xs md:text-sm text-gray-400 uppercase">Ώρες</div>
+                     </div>
+                     <div class="text-purple-400 text-3xl md:text-4xl font-bold">:</div>
+                     <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-purple-400" id="minutes">00</div>
+                        <div class="text-xs md:text-sm text-gray-400 uppercase">Λεπτά</div>
+                     </div>
+                     <div class="text-purple-400 text-3xl md:text-4xl font-bold">:</div>
+                     <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-purple-400" id="seconds">00</div>
+                        <div class="text-xs md:text-sm text-gray-400 uppercase">Δευτ</div>
+                     </div>
+                  </div>
+               </div>
+               <p class="text-xl md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+                  Πώς να φτάσεις στο <span class="text-purple-400 font-bold">Top 5%</span> οικονομικά 
+                  και να βγάζεις τουλάχιστον <span class="text-purple-400 font-bold">60.000€/χρόνο</span>
+               </p>
+               <div class="relative rounded-2xl overflow-hidden max-w-[600px] flex justify-center items-center mb-4">
+                  <iframe
+                     class="w-full h-auto border-2 border-purple-500/50 rounded-2xl"
+                     src="http://elite-media.gr/vsl2"
+                     poster="vsl_poster.png"
+                     controls
+                     id="mainVideo"
+                     ></iframe>
+               </div>
+               <div class="text-center">
+                  <a href="https://lifemasterytrainings.com/" 
+                     class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-4 px-8 rounded-xl hover:shadow-lg hover:shadow-purple-500/50 transition-all btn-pulse">
+                  <span>Πρόλαβε τη Θέση σου</span>
+                  <i class="fas fa-arrow-right"></i>
+                  </a>
+                  <p class="capitalize text-gray-500 mt-2 text-sm">
+                     πάρε έμπνευση απο εδω
+                  </p>
+               </div>
+            </div>
+         </section>
+         <section class="flex flex-col items-center justify-center px-6 py-20 text-center">
+            <div class="max-w-6xl mx-auto">
+               <h2 class="heading-font text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
+                  Θα πάρεις τον χάρτη για
+               </h2>
+               <p class="text-gray-400 mb-4 text-lg">Ολοκληρωμένη προετοιμασία για την επιτυχία</p>
+               <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div class="rounded-xl p-8 transition-all   backdrop-blur-sm border border-purple-500/50">
+                     <i class="fas fa-brain text-5xl text-purple-400 mb-2"></i>
+                     <h3 class="text-white font-bold text-xl mb-4">Mindset Transformation</h3>
+                     <p class="text-gray-400">Αλλάζουμε τον τρόπο σκέψης σου για μόνιμα αποτελέσματα</p>
+                  </div>
+                  <div class="rounded-xl p-8 transition-all   backdrop-blur-sm border border-purple-500/50">
+                     <i class="fas fa-network-wired text-5xl text-purple-400 mb-2"></i>
+                     <h3 class="text-white font-bold text-xl mb-4">Premium Network</h3>
+                     <p class="text-gray-400">Συνδέσου με το Top 0.01% των επαγγελματιών</p>
+                  </div>
+                  <div class="rounded-xl p-8 transition-all   backdrop-blur-sm border border-purple-500/50">
+                     <i class="fas fa-chart-line text-5xl text-purple-400 mb-2"></i>
+                     <h3 class="text-white font-bold text-xl mb-4">AI & Business</h3>
+                     <p class="text-gray-400">Το μέλλον της επιχειρηματικότητας στα χέρια σου</p>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="py-20 px-6 bg-gradient-to-b from-transparent">
+            <div class="max-w-6xl mx-auto">
+               <div class="text-center mb-4">
+                  <h2 class="heading-font text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
+                     Οι Ομιλητές Μας
+                  </h2>
+                  <p class="text-gray-400 text-lg">Κορυφαίοι επαγγελματίες που θα σε οδηγήσουν στην επιτυχία</p>
+               </div>
+               <div class="slider-container">
+                  <div class="relative overflow-hidden rounded-2xl">
+                     <div class="slider-track">
+                        <div class="slide flex justify-center items-center max-w-[600px]">
+                           <img src="vsl_poster.png" alt="Gateway" class="max-w-[600px] h-auto border-2 border-purple-500/50 rounded-2xl">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="py-20 px-6" style="padding-bottom: 0;">
+            <div class="max-w-4xl mx-auto">
+               <div class="text-center mb-4">
+                  <h2 class="heading-font text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
+                     Τι να Περιμένεις
+                  </h2>
+                  <p class="text-gray-400 text-lg">Μια ολοκληρωμένη εμπειρία μετασχηματισμού</p>
+               </div>
+               <div class="rounded-2xl p-8 md:p-12  backdrop-blur-sm border border-purple-500/30">
+                  <div class="space-y-8">
+                     <div class="flex items-start gap-6">
+                        <i class="fas fa-check-circle text-purple-400 text-3xl mt-1 flex-shrink-0"></i>
+                        <div>
+                           <h3 class="text-white font-bold text-xl mb-3">2 Μέρες Εντατικής Εκπαίδευσης</h3>
+                           <p class="text-gray-400 leading-relaxed">Πλήρης εστίαση στο μέλλον σου με τους καλύτερους mentors της αγοράς</p>
+                        </div>
+                     </div>
+                     <div class="flex items-start gap-6">
+                        <i class="fas fa-shield-alt text-purple-400 text-3xl mt-1 flex-shrink-0"></i>
+                        <div>
+                           <h3 class="text-white font-bold text-xl mb-3">Προστασία από τους Κινδύνους</h3>
+                           <p class="text-gray-400 leading-relaxed">Πληθωρισμός, AI, αλλαγές στην αγορά εργασίας - μάθε πώς να προστατευτείς αποτελεσματικά</p>
+                        </div>
+                     </div>
+                     <div class="flex items-start gap-6">
+                        <i class="fas fa-map text-purple-400 text-3xl mt-1 flex-shrink-0"></i>
+                        <div>
+                           <h3 class="text-white font-bold text-xl mb-3">Ο Χάρτης προς την Επιτυχία</h3>
+                           <p class="text-gray-400 leading-relaxed">Όχι απλά motivation, αλλά πρακτικά βήματα και στρατηγικές που λειτουργούν</p>
+                        </div>
+                     </div>
+                     <div class="flex items-start gap-6">
+                        <i class="fas fa-robot text-purple-400 text-3xl mt-1 flex-shrink-0"></i>
+                        <div>
+                           <h3 class="text-white font-bold text-xl mb-3">AI-Powered Business Model</h3>
+                           <p class="text-gray-400 leading-relaxed">Πρόσβαση σε βραβευμένες AI τεχνολογίες και το επιχειρηματικό μοντέλο του 21ου αιώνα</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="mt-10 p-8  rounded-xl">
+                     <p class="text-purple-300 text-center italic text-lg leading-relaxed">
+                        <i class="fas fa-quote-left text-purple-400 mr-3"></i>
+                        Το 2026 θα είναι η χρονιά των μεγαλύτερων αλλαγών. Ετοιμάσου τώρα!
+                        <i class="fas fa-quote-right text-purple-400 ml-3"></i>
+                     </p>
+                  </div>
+               </div>
+               <div class="mt-16 flex justify-center items-center">
+                  <img src="tickets.png" alt="Event Tickets" class="w-full rounded-2xl shadow-2xl max-w-[600px] border-2 border-purple-500/30">
+               </div>
+            </div>
+         </section>
+         <footer class="py-16 px-6 border-t border-purple-500/20 mt-20">
+            <div class="max-w-4xl mx-auto text-center">
+               <div class="flex justify-center gap-8 mb-8">
+                  <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors transform hover:scale-110">
+                  <i class="fab fa-facebook text-3xl"></i>
+                  </a>
+                  <a href="https://www.instagram.com/elitemedia.gr" class="text-gray-400 hover:text-purple-400 transition-colors transform hover:scale-110">
+                  <i class="fab fa-instagram text-3xl"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors transform hover:scale-110">
+                  <i class="fab fa-linkedin text-3xl"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors transform hover:scale-110">
+                  <i class="fab fa-youtube text-3xl"></i>
+                  </a>
+               </div>
+               <p class="text-gray-500">
+                  © 2025 BEyondX. All rights reserved. <br>
+                  Created by <a href="mailto:&#108;&#111;&#114;&#101;&#110;&#116;&#122;&#111;&#115;&#46;&#119;&#111;&#114;&#107;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="text-white opacity-50 underline underline-offset-[5px]">Lorentzos</a>
+               </p>
+            </div>
+         </footer>
+      </div>
+      <script>
+         window.addEventListener('load', () => {
+             setTimeout(() => {
+                 document.getElementById('loader').classList.add('fade-out');
+             }, 500);
+         });
+         
+         
+         
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+             anchor.addEventListener('click', function (e) {
+                 e.preventDefault();
+                 const target = document.querySelector(this.getAttribute('href'));
+                 if (target) {
+                     target.scrollIntoView({ behavior: 'smooth' });
+                 }
+             });
+         });
+         
+         function updateCountdown() {
+         const eventDate = new Date('2025-11-29T09:00:00').getTime();
+         const now = new Date().getTime();
+         const distance = eventDate - now;
+         
+         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+         
+         document.getElementById('days').textContent = String(days).padStart(2, '0');
+         document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+         document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+         document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+         
+         if (distance < 0) {
+         document.getElementById('days').textContent = '00';
+         document.getElementById('hours').textContent = '00';
+         document.getElementById('minutes').textContent = '00';
+         document.getElementById('seconds').textContent = '00';
+         }
+         }
+         
+         updateCountdown();
+         setInterval(updateCountdown, 1000);
+      </script>
+   </body>
+</html>
